@@ -1,0 +1,22 @@
+# Arquivos de compilação
+*.class
+
+# Pastas de build do NetBeans e Ant
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+
+# Configurações privadas do NetBeans (isso aqui é o que dá conflito entre os PCs!)
+/nbproject/private/
+/nbproject/project.properties
+/nbproject/build-impl.xml
+
+# Arquivos de sistema operacional (Mac/Windows)
+.DS_Store
+Thumbs.db
+
+# Bloqueio total do NetBeans e bibliotecas locais
+/nbproject/
+build.xml
+/lib/
