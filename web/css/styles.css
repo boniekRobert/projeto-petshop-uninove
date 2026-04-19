@@ -1,0 +1,162 @@
+/* ==========================================================================
+   1. GERAL (Fontes, Body, Containers)
+   ========================================================================== */
+body {
+    font-family: Calibri, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #ededed;
+    padding: 30px;
+    border-radius: 10px;
+    border: solid #c0c0c0 1px;
+    text-align: center;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   2. FORMULÁRIOS (Login, Cadastro de Usuário e Cadastro de Pet)
+   ========================================================================== */
+form {
+    width: 60%;
+    background-color: #ededed;
+    border: solid #c0c0c0 1px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px auto; /* Reduzi a margem para não ficar tão longe no topo */
+    box-shadow: 10px 10px 7px rgb(171, 219, 227);
+}
+
+label {
+    font-size: 17px;
+    color: rgba(28, 75, 218, 1);
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    background-color: rgba(202, 233, 236, 1);
+    color: black;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+input[type=submit] {
+    width: 50%;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #c0c0c0;
+    color: black;
+    border: solid #ededed 1px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+input[type=submit]:hover {
+    background-color: #a0a0a0;
+}
+
+/* ==========================================================================
+   3. BOTÕES E AÇÕES (Classes reutilizáveis)
+   ========================================================================== */
+.btn-acao {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cadastrar {
+    background-color: #2ecc71;
+}
+.btn-cadastrar:hover {
+    background-color: #27ae60;
+}
+
+.btn-listar {
+    background-color: #3498db;
+}
+.btn-listar:hover {
+    background-color: #2980b9;
+}
+
+.btn-logout {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.btn-logout:hover {
+    background-color: #c0392b;
+}
+
+/* ==========================================================================
+   4. TABELAS (Listagem de Pets)
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table thead tr {
+    background-color: #3498db;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:hover {
+    background-color: #e9f5ff;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #3498db;
+}
+
+/* ==========================================================================
+   5. FEEDBACK (Mensagens de sistema)
+   ========================================================================== */
+.msg-sucesso {
+    color: green;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.msg-erro {
+    color: red;
+    font-weight: bold;
+    margin: 10px 0;
+}

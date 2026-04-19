@@ -1,11 +1,11 @@
 -- 1. Criação do banco de dados unificado
-CREATE DATABASE db_petshop;
+CREATE DATABASE IF NOT EXISTS db_petshop;
 
--- 2. Selecionando o banco para criar as tabelas dentro dele
+-- 2. Selecionando o banco para uso
 USE db_petshop;
 
--- 3. Criação da tabela de Usuários (Para cumprir a validação de login do projeto)
-CREATE TABLE usuarios (
+-- 3. Criação da tabela de Usuários
+CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT,
     login VARCHAR(50) NOT NULL,
     senha VARCHAR(50) NOT NULL,
@@ -13,8 +13,8 @@ CREATE TABLE usuarios (
     CONSTRAINT uk_login UNIQUE (login)
 );
 
--- 4. Criação da tabela Pet (Baseada na estrutura do exercício original)
-CREATE TABLE pet (
+-- 4. Criação da tabela Pet
+CREATE TABLE IF NOT EXISTS pet (
     id INT AUTO_INCREMENT,
     raca VARCHAR(40),
     nome VARCHAR(60) NOT NULL,
@@ -24,5 +24,6 @@ CREATE TABLE pet (
     CONSTRAINT pk_pet PRIMARY KEY (id)
 );
 
--- 5. Inserindo um usuário administrador padrão para testar o login
-INSERT INTO usuarios (login, senha) VALUES ('USUARIO', 'SUA_SENHA');
+-- 5. Inserindo dados iniciais para teste
+-- Lembre-se de trocar 'SUA_SENHA' pela senha que você usa para testar o login
+INSERT IGNORE INTO usuarios (login, senha) VALUES ('USUARIO', 'SUA_SENHA');

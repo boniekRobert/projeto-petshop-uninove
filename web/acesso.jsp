@@ -19,10 +19,12 @@
             try {
                 // 2. Conectar com o banco de dados
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_petshop", "root", "SUA_SENHA_AQUI");
+                Connection conexao = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/db_petshop", "root", "SUA_SENHA_AQUI");
 
                 // 3. Buscar no banco se existe um usuario com ESSE login e ESSA senha
-                PreparedStatement st = conexao.prepareStatement("SELECT * FROM usuarios WHERE login = ? AND senha = ?");
+                PreparedStatement st = conexao.prepareStatement(
+                        "SELECT * FROM usuarios WHERE login = ? AND senha = ?");
                 st.setString(1, loginDigitado);
                 st.setString(2, senhaDigitada);
 

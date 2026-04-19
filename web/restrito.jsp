@@ -13,15 +13,22 @@
         <title>Área Restrita - Petshop</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/login.css"/>
+        <link rel="stylesheet" href="css/styles.css"/>
     </head>
     <body>
         <div class="container">
-            <h1 style="color: green;">Login realizado com sucesso!</h1>
+            <h1 class="msg-sucesso">Acesso Autorizado!</h1>
 
             <h2>Bem-vindo ao sistema PetShop, <%= session.getAttribute("usuarioLogado")%>!</h2>
 
-            <p>Este é o seu Dashboard. A partir daqui, vamos construir o cadastro de pets.</p>
+            <p>Este é o seu Dashboard. Utilize as opções abaixo para gerenciar o sistema.</p>
+
+            <hr>
+
+            <div class="menu-dashboard">
+                <a href="cadastro_pet.html" class="btn-acao btn-cadastrar">+ Cadastrar Novo Pet</a>
+                <a href="listar_pets.jsp" class="btn-acao btn-listar">Ver Meus Pets</a>
+            </div>
 
             <hr>
 

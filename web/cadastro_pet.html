@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastrar Pet</title>
+        <link rel="stylesheet" href="css/styles.css"> 
+    </head>
+    <body>
+        <div class="container">
+            <h2>Cadastrar Novo Pet 🐾</h2>
+
+            <form action="salvar_pet.jsp" method="POST">
+                <input type="text" name="nome" placeholder="Nome do Pet" required>
+                <input type="text" name="raca" placeholder="Raça">
+                <input type="number" name="idade" placeholder="Idade">
+                <input type="text" name="caracteristicas" placeholder="Características (ex: dócil, bravo)">
+                <input type="text" name="dono" placeholder="Nome do Dono" required>
+
+                <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px;">
+                    <button type="submit" class="btn-acao btn-cadastrar" style="border:none; margin: 0;">Salvar Pet</button>
+                    <a href="restrito.jsp" class="btn-acao btn-listar" style="margin: 0;">Voltar ao Painel</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
