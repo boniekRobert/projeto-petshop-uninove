@@ -11,18 +11,18 @@
     </head>
     <body>
         <%
-            // 1. Receber o login e senha digitados no form do login.html
+            // Receber o login e senha digitados no form do login.html
             String loginDigitado, senhaDigitada;
             loginDigitado = request.getParameter("login");
             senhaDigitada = request.getParameter("senha");
 
             try {
-                // 2. Conectar com o banco de dados
+                // Conectar com o banco de dados
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection conexao = DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/db_petshop", "root", "SUA_SENHA_AQUI");
 
-                // 3. Buscar no banco se existe um usuario com ESSE login e ESSA senha
+                // Buscar no banco se existe um usuário com ESSE login e ESSA senha
                 PreparedStatement st = conexao.prepareStatement(
                         "SELECT * FROM usuarios WHERE login = ? AND senha = ?");
                 st.setString(1, loginDigitado);
@@ -30,7 +30,7 @@
 
                 ResultSet usuarioBuscado = st.executeQuery();
 
-                // 4. Verificar o resultado da busca
+                // Verificar o resultado da busca
                 if (usuarioBuscado.next()) {
 
                     // 1º Passo: Pendura o crachá VIP na sessão do servidor
@@ -42,7 +42,7 @@
                 } else {
                     // Se não encontrou (Login ou Senha errados)
                     out.print("<h3 style='color: red; text-align: center;'>Usuário ou senha incorretos!</h3>");
-                    out.print("<p style='text-align: center;'><a href='login.html'>Tentar Novamente</a></p>");
+                    out.print("<p style='text-align: center;'><a href='index.html'>Tentar Novamente</a></p>");
                 }
 
                 // Fecha a conexão

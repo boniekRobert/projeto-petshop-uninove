@@ -2,7 +2,7 @@
 <%@page import="java.sql.*"%>
 <%
     if (session.getAttribute("usuarioLogado") == null) {
-        response.sendRedirect("login.html");
+        response.sendRedirect("index.html");
         return;
     }
 
@@ -17,7 +17,7 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conexao = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/db_petshop", "root", "SUA_SENHA_AQUI");
-
+        
         String sql = "UPDATE pet SET nome=?, raca=?, idade=?, caracteristicas=?, dono=? WHERE id=?";
         PreparedStatement ps = conexao.prepareStatement(sql);
         ps.setString(1, nome);

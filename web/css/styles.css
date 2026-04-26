@@ -1,162 +1,170 @@
-/* ==========================================================================
-   1. GERAL (Fontes, Body, Containers)
-   ========================================================================== */
-body {
-    font-family: Calibri, sans-serif;
-    background-color: #f4f4f4;
+/* ============================================================
+   ESTILO GLOBAL
+   ============================================================ */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Calibri, sans-serif;
 }
 
-.container {
-    width: 80%;
-    margin: 50px auto;
-    background-color: #ededed;
-    padding: 30px;
-    border-radius: 10px;
-    border: solid #c0c0c0 1px;
-    text-align: center;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-}
-
-/* ==========================================================================
-   2. FORMULÁRIOS (Login, Cadastro de Usuário e Cadastro de Pet)
-   ========================================================================== */
-form {
-    width: 60%;
-    background-color: #ededed;
-    border: solid #c0c0c0 1px;
-    border-radius: 10px;
+body {
+    background-color: #f4f4f4; /* Fundo cinza claro minimalista */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #000;
     padding: 20px;
-    margin: 50px auto; /* Reduzi a margem para não ficar tão longe no topo */
-    box-shadow: 10px 10px 7px rgb(171, 219, 227);
+}
+
+/* Container principal para alinhar o conteúdo */
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ============================================================
+   COMPONENTES (CARDS E FORMULÁRIOS)
+   ============================================================ */
+
+/* Card padrão com fundo branco e sombra leve */
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    text-align: center;
+}
+
+/* Ajuste específico para a caixa de LOGIN (menos larga) */
+.login-card {
+    max-width: 400px;
+    padding: 50px 40px;
+}
+
+/* Estilo para todos os formulários */
+form {
+    width: 100%;
+    margin-top: 15px;
 }
 
 label {
-    font-size: 17px;
-    color: rgba(28, 75, 218, 1);
     display: block;
+    text-align: left;
     margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 input {
-    background-color: rgba(202, 233, 236, 1);
-    color: black;
-    font-size: 16px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 80%;
+    width: 100%;
+    padding: 12px;
     margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
-input[type=submit] {
-    width: 50%;
-    border-radius: 5px;
+/* ============================================================
+   BOTÕES E LINKS
+   ============================================================ */
+
+/* Botão principal (Preto) */
+.btn-main, input[type=submit] {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
     cursor: pointer;
-    padding: 10px;
-    background-color: #c0c0c0;
-    color: black;
-    border: solid #ededed 1px;
     font-weight: bold;
+    width: auto; /* Tamanho ajustado ao texto */
+    min-width: 160px;
     transition: 0.3s;
-}
-
-input[type=submit]:hover {
-    background-color: #a0a0a0;
-}
-
-/* ==========================================================================
-   3. BOTÕES E AÇÕES (Classes reutilizáveis)
-   ========================================================================== */
-.btn-acao {
+    border-radius: 4px;
     display: inline-block;
-    padding: 10px 20px;
-    margin: 10px 5px;
     text-decoration: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
+}
+
+.btn-main:hover, input[type=submit]:hover {
+    background: #333;
+}
+
+/* Botão secundário (Vazado/Contorno) */
+.btn-outline {
+    background: transparent;
+    color: #000;
+    border: 1px solid #000;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-cadastrar {
-    background-color: #2ecc71;
-}
-.btn-cadastrar:hover {
-    background-color: #27ae60;
-}
-
-.btn-listar {
-    background-color: #3498db;
-}
-.btn-listar:hover {
-    background-color: #2980b9;
-}
-
-.btn-logout {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ff4d4d;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
-}
-.btn-logout:hover {
-    background-color: #c0392b;
+    border-radius: 4px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
-/* ==========================================================================
-   4. TABELAS (Listagem de Pets)
-   ========================================================================== */
+.btn-outline:hover {
+    background: #f0f0f0;
+}
+
+/* Links de autenticação */
+.auth-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* Dá um espaço entre o título e o botão de navegação superior */
+.card h1, .card h2 {
+    margin-bottom: 20px !important;
+}
+
+/* Garante que os botões de navegação (Sair/Voltar) tenham margem */
+.btn-outline {
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+/* ============================================================
+   TABELAS (LISTAGEM DE PETS)
+   ============================================================ */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    margin-top: 25px;
+    background: #fff;
 }
 
-table thead tr {
-    background-color: #3498db;
-    color: #ffffff;
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
     text-align: left;
-    font-weight: bold;
 }
 
-table th, table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #dddddd;
+th {
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
 }
 
-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+tr:hover {
+    background-color: #fafafa;
 }
 
-table tbody tr:hover {
-    background-color: #e9f5ff;
-}
-
-table tbody tr:last-of-type {
-    border-bottom: 2px solid #3498db;
-}
-
-/* ==========================================================================
-   5. FEEDBACK (Mensagens de sistema)
-   ========================================================================== */
-.msg-sucesso {
-    color: green;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.msg-erro {
-    color: red;
-    font-weight: bold;
-    margin: 10px 0;
+/* Estilo para os ícones de ação na tabela */
+.acoes-link {
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin: 0 5px;
 }

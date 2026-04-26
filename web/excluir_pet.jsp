@@ -1,13 +1,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <%
-    // 1. Segurança
+    // Segurança
     if (session.getAttribute("usuarioLogado") == null) {
-        response.sendRedirect("login.html");
+        response.sendRedirect("index.html");
         return;
     }
 
-    // 2. Pega o ID que veio pelo link
+    // Pega o ID que veio pelo link
     String idParaExcluir = request.getParameter("id");
 
     try {
@@ -15,7 +15,7 @@
         Connection conexao = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/db_petshop", "root", "SUA_SENHA_AQUI");
 
-        // 3. Deleta do banco
+        // Deleta do banco
         PreparedStatement st = conexao.prepareStatement("DELETE FROM pet WHERE id = ?");
         st.setInt(1, Integer.parseInt(idParaExcluir));
         st.executeUpdate();

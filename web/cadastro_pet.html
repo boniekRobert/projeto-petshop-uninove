@@ -2,25 +2,35 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>Cadastrar Pet</title>
-        <link rel="stylesheet" href="css/styles.css"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Novo Pet - PetManager</title>
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
+
         <div class="container">
-            <h2>Cadastrar Novo Pet 🐾</h2>
+            <div class="card" style="max-width: 500px; margin: 0 auto;">
+                <h2>🐾 Cadastrar Novo Pet</h2>
+                <p style="margin-bottom: 20px; color: #666;">Preencha as informações abaixo</p>
+                <form action="salvar_pet.jsp" method="POST" style="box-shadow: none; padding: 0;">
+                    <input type="text" name="nome" placeholder="Nome do Pet" required>
 
-            <form action="salvar_pet.jsp" method="POST">
-                <input type="text" name="nome" placeholder="Nome do Pet" required>
-                <input type="text" name="raca" placeholder="Raça">
-                <input type="number" name="idade" placeholder="Idade">
-                <input type="text" name="caracteristicas" placeholder="Características (ex: dócil, bravo)">
-                <input type="text" name="dono" placeholder="Nome do Dono" required>
+                    <input type="text" name="raca" placeholder="Espécie / Raça (Ex: Poodle, Persa)" required>
 
-                <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px;">
-                    <button type="submit" class="btn-acao btn-cadastrar" style="border:none; margin: 0;">Salvar Pet</button>
-                    <a href="restrito.jsp" class="btn-acao btn-listar" style="margin: 0;">Voltar ao Painel</a>
-                </div>
-            </form>
+                    <input type="number" name="idade" placeholder="Idade (em anos)" required min="0">
+
+                    <input type="text" name="caracteristicas" placeholder="Características (Ex: Pelagem branca, dócil)">
+
+                    <input type="text" name="dono" placeholder="Nome do Responsável / Dono" required>
+
+                    <button type="submit" class="btn-main">Salvar Pet</button>
+
+                    <div style="margin-top: 20px;">
+                        <a href="restrito.jsp" class="btn-outline">Cancelar e Voltar</a>
+                    </div>
+                </form>
+            </div>
         </div>
+
     </body>
 </html>

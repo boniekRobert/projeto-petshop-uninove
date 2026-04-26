@@ -3,11 +3,11 @@
 <%
     // Validação de Segurança: Só entra se estiver logado
     if (session.getAttribute("usuarioLogado") == null) {
-        response.sendRedirect("login.html");
+        response.sendRedirect("index.html");
         return;
     }
 
-    // 1. Captura os dados do formulário
+    // Captura os dados do formulário
     String nome = request.getParameter("nome");
     String raca = request.getParameter("raca");
     String idadeStr = request.getParameter("idade");
@@ -15,12 +15,12 @@
     String dono = request.getParameter("dono");
 
     try {
-        // 2. Conexão
+        // Conexão
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection conexao = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/db_petshop", "root", "SUA_SENHA_AQUI");
 
-        // 3. SQL de Inserção
+        // SQL de Inserção
         String sql = "INSERT INTO pet (nome, raca, idade, caracteristicas, dono) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement st = conexao.prepareStatement(sql);
 

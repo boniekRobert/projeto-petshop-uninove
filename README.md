@@ -32,3 +32,11 @@ O sistema utiliza um banco de dados relacional chamado `db_petshop` contendo dua
 1. **Clone o repositório:**
    ```bash
    git clone [https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git](https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git)
+
+2. **Configuração do Banco de Dados:**
+   - Execute o arquivo `script_banco.sql` no seu MySQL Workbench para criar a estrutura necessária.
+   - **Atenção:** Por questões de segurança, as senhas de conexão foram omitidas no código. Você deve abrir os arquivos `.jsp` que realizam conexão com o banco e inserir suas credenciais locais na linha:
+     `DriverManager.getConnection("jdbc:mysql://localhost:3306/db_petshop", "root", "SUA_SENHA_AQUI");`
+
+3. **Arquivos que requerem ajuste de senha:**
+   - `acesso.jsp`, `salvar_usuario.jsp`, `salvar_pet.jsp`, `listar_pets.jsp`, `editar_pet.jsp`, `atualizar_pet.jsp` e `excluir_pet.jsp`.
