@@ -13,6 +13,20 @@ O sistema atende aos seguintes requisitos:
 - **Alterar (Update):** Atualização de dados de pets já cadastrados no banco.
 - **Excluir (Delete):** Remoção de registros do sistema.
 
+  ## 📷 Telas da Aplicação
+
+### 🔐 Tela de Login
+![Login](img/login.png)
+
+### 📊 Painel Administrativo
+![Dashboard](img/dashboard.png)
+
+### 🐾 Cadastro de Novos Pets
+![Cadastro](img/cadastro.png)
+
+### 📑 Listagem e Gerenciamento de Pets (CRUD)
+![Listagem](img/listagem.png)
+
 ## 🛠️ Tecnologias e Ferramentas
 - **Linguagem:** Java (Web)
 - **IDE:** Apache NetBeans
