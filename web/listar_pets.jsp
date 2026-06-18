@@ -46,8 +46,9 @@
                         <tr>
                             <td><%= rs.getString("nome")%></td>
                             <td><%= rs.getString("raca")%></td>
-                            <td><%= rs.getInt("idade")%> anos</td>
-                            <td><%= rs.getString("caracteristicas")%></td> <td><%= rs.getString("dono")%></td>
+                            <td><%= rs.getInt("idade")%> ano(s)</td>
+                            <td><%= rs.getString("caracteristicas")%></td> 
+                            <td><%= rs.getString("dono")%></td>
                             <td>
                                 <a href="editar_pet.jsp?id=<%= id%>" style="text-decoration:none; margin-right:15px; font-size: 1.2rem;">✏️</a>
                                 <a href="excluir_pet.jsp?id=<%= id%>" style="text-decoration:none; color: #d9534f; font-size: 1.2rem;"
