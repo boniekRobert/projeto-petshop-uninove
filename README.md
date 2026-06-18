@@ -13,7 +13,7 @@ O sistema atende aos seguintes requisitos:
 - **Alterar (Update):** Atualização de dados de pets já cadastrados no banco.
 - **Excluir (Delete):** Remoção de registros do sistema.
 
-  ## 📷 Telas da Aplicação
+## 📷 Telas da Aplicação
 
 ### 🔐 Tela de Login
 ![Login](img/login.png)
